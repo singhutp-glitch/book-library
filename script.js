@@ -21,6 +21,12 @@ function display(myLib)
 
     for (let book of myLib)
     { 
+        const card=constructCard(book);
+        books.appendChild(card);
+    }
+
+    function constructCard(book)
+    {   //create elements
         const card=document.createElement('div');
         const bookTitle=document.createElement('div');
         const bookAuthor=document.createElement('div');
@@ -31,36 +37,38 @@ function display(myLib)
         const authorname=document.createElement('span');
         const pagesname=document.createElement('span');
 
+        //add text
         authorHead.textContent='Author: ';
         pagesHead.textContent='Pages: ';
-
-        bookAuthor.appendChild(authorHead);
-        bookPages.appendChild(pagesHead);
-
-        bookAuthor.appendChild(authorname);
-        bookPages.appendChild(pagesname);
-
-        authorHead.classList.add('detailhead');
-        pagesHead.classList.add('detailhead');
 
         bookTitle.textContent=book.title;
         authorname.textContent+=book.author;
         pagesname.textContent+=book.pages;
         bookRead.textContent=(book.read===1)?'read':'unread';
+        
+        //connect elements
+        bookAuthor.appendChild(authorHead);
+        bookPages.appendChild(pagesHead);
+        bookAuthor.appendChild(authorname);
+        bookPages.appendChild(pagesname);
+
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
         card.appendChild(bookRead);
+
+        //add classes
+        authorHead.classList.add('detailhead');
+        pagesHead.classList.add('detailhead');
 
         card.classList.add('card');
         bookTitle.classList.add('title');
         bookAuthor.classList.add('detail');
         bookPages.classList.add('detail');
         bookRead.classList.add('status');
-       
-        books.appendChild(card);
-    }
 
+        return card;
+    }
 }
 
 //main
@@ -69,8 +77,8 @@ const bodyElement=document.querySelector('body');
 const books=document.querySelector('.books');
 
 myLib=[];
-addToLib("book1",'author1',1,1);
-addToLib("book2","author2",1,1);
-addToLib("book3","author3",1,1);
+addToLib("Harry Potter and the Sorcerer's Stone",'J.K. Rowling',309,1);
+addToLib("To Kill a Mockingbird","Harper Lee",281,1);
+addToLib("1984","George Orwell",328,0);
 
 display(myLib);
