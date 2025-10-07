@@ -112,6 +112,13 @@ function removeBook(tar)
     myLib.splice(+card.dataset.id - deleteCount,1);
     deleteCount++;
 }
+function toggleRead(tar)
+{
+    const card=tar.parentElement;
+    const id=card.dataset.id-deleteCount;
+    myLib[id].read=1-myLib[id].read;
+    console.log(myLib[id].read);
+}
 
 function checkForCross(event)
 {
@@ -120,6 +127,11 @@ function checkForCross(event)
     {
         removeBook(tar);
     }
+    if(tar.classList.value==='status')
+    {
+        toggleRead(tar);
+    }
+    console.log(tar.classList.value);
 }
 
 //main
