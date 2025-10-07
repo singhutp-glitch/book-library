@@ -39,7 +39,9 @@ function constructCard(book)
     const authorname=document.createElement('span');
     const pagesname=document.createElement('span');
     const cross=document.createElement('div');
-
+    //add id to card
+    card.setAttribute('data-id',bookCount);
+    bookCount=bookCount+1;
     //add text
     authorHead.textContent='Author: ';
     pagesHead.textContent='Pages: ';
@@ -110,12 +112,16 @@ function checkForCross(event)
     if(tar.classList.value==='cross')
     {
         console.log(event.target.classList.value);
+        const card=tar.parentElement;
+        books.removeChild(card);
+        myLib.splice(+card.dataset.id - deleteCount,1);
+        deleteCount++;
     }
         
 }
 
 //main
-
+let bookCount=0,deleteCount=0;
 const bodyElement=document.querySelector('body');
 const books=document.querySelector('.books');
 const btn=document.querySelector('.submit');
