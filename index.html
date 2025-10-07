@@ -10,7 +10,19 @@
     <div class="nav">Library</div>
     <div class="main">
         <div class="books"></div>
-        <div class="add">add
+        <div class="add">
+            Add New Book
+            <form method="post" action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+                <label for="name">Author:</label>
+                <input type="text" id="author">
+                <label for="name">Number of pages:</label>
+                <input type="number" id="numofpages">
+                <label for="name" class="check">Read already?</label>
+                <input type="checkbox" class="check" id="read">
+                <button type="submit">Add Book</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
