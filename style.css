@@ -1,3 +1,46 @@
 *{
     outline: auto;
 }
+body{
+    margin:0;
+}
+.main{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    margin:0px;
+
+}
+.books{
+    flex:3 ;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.add{
+    flex:1 ;
+}
+.card{
+    width: 320px;
+    height: 320px;
+    box-sizing: border-box;
+}
+.card>div{
+    margin:20px 20px;
+}
+.title{
+    font-size: 34px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.detail{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.detailhead{
+    font-weight: bold;
+}
+
+.status{
+    display: inline;
+    padding: 5px 10px;
+}

@@ -26,14 +26,39 @@ function display(myLib)
         const bookAuthor=document.createElement('div');
         const bookPages=document.createElement('div');
         const bookRead=document.createElement('div');
+        const authorHead=document.createElement('span');
+        const pagesHead=document.createElement('span');
+        const authorname=document.createElement('span');
+        const pagesname=document.createElement('span');
+
+        authorHead.textContent='Author: ';
+        pagesHead.textContent='Pages: ';
+
+        bookAuthor.appendChild(authorHead);
+        bookPages.appendChild(pagesHead);
+
+        bookAuthor.appendChild(authorname);
+        bookPages.appendChild(pagesname);
+
+        authorHead.classList.add('detailhead');
+        pagesHead.classList.add('detailhead');
+
         bookTitle.textContent=book.title;
-        bookAuthor.textContent=book.author;
-        bookPages.textContent=book.pages;
-        bookRead.textContent=book.read;
+        authorname.textContent+=book.author;
+        pagesname.textContent+=book.pages;
+        bookRead.textContent=(book.read===1)?'read':'unread';
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
         card.appendChild(bookRead);
+
+        card.classList.add('card');
+        bookTitle.classList.add('title');
+        bookAuthor.classList.add('detail');
+        bookPages.classList.add('detail');
+        bookRead.classList.add('status');
+       
+        books.appendChild(card);
     }
 
 }
@@ -41,10 +66,11 @@ function display(myLib)
 //main
 
 const bodyElement=document.querySelector('body');
+const books=document.querySelector('.books');
 
 myLib=[];
-addToLib("b1",'a1',1,1);
-addToLib("b2","a2",1,1);
-addToLib("b3","a3",1,1);
+addToLib("book1",'author1',1,1);
+addToLib("book2","author2",1,1);
+addToLib("book3","author3",1,1);
 
 display(myLib);
