@@ -1,8 +1,14 @@
-*{
+/* *{
     outline: auto;
-}
+} */
 body{
     margin:0;
+}
+.nav{
+    background-color: #1F1F1F;
+    color:#F8F8F8;
+    padding: 10px 10px;
+    font-size: 30px;
 }
 .main{
     display: flex;
@@ -16,14 +22,21 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 5px;
+    background-color: #00c3ff4c;
+    
 }
 .add{
     flex:1 ;
 }
 .card{
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 270px;
     box-sizing: border-box;
+    border: groove rgba(141, 249, 255, 0.704) 2px;
+    border-radius: 10px;
+    background-color: #e1f3f3;
+    color:rgb(31, 32, 34);
 }
 .card>div{
     margin:20px 20px;
@@ -43,4 +56,10 @@ body{
 .status{
     display: inline;
     padding: 5px 10px;
+    border:solid 1px black;
+    background-color: rgba(0, 255, 13, 0.843);
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    border-radius: 5px;
 }
