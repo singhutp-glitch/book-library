@@ -1,6 +1,6 @@
-/* *{
+*{
     outline: auto;
-} */
+}
 body{
     margin:0;
 }
@@ -21,10 +21,11 @@ body{
     flex:3 ;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     padding: 5px;
     background-color: #00c3ff4c;
-    
+    height: 100vb;   
+     overflow-y: auto;  
 }
 .add{
     flex:1 ;
@@ -32,6 +33,7 @@ body{
 .card{
     width: 300px;
     height: 300px;
+    margin:20px;
     box-sizing: border-box;
     border: groove rgba(141, 249, 255, 0.704) 2px;
     border-radius: 10px;
@@ -65,10 +67,41 @@ body{
 }
 /*form style*/
 
+form{
+    padding-left: 15px;
+}
+h2{
+    text-align: center;
+}
 label,input,button{
     display: block;
+   
+}
+label{
+     margin-top:20px;
+}
+input[type='text'],input[type='number']{
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+    padding-left: 10px;
+    border-radius: 8px;
 }
 .check{
     display:inline;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.add{
+    font-size: 30px;
+    background-color: aquamarine;
+}
+
+button{
+    font-size: 24px;
+    padding:8px 30px;
+    margin-top: 28px;
+    border-radius: 8px;
 }
 
