@@ -1,5 +1,3 @@
-console.log("hello");
-
 //functions
 
 function Book(title, author, pages, read)
