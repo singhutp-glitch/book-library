@@ -75,7 +75,7 @@ function constructCard(book)
     bookTitle.classList.add('title');
     bookAuthor.classList.add('detail');
     bookPages.classList.add('detail');
-    bookRead.classList.add('status');
+    bookRead.classList.add((book.read==1)?'status':'unstatus');
 
     return card;
 }
@@ -116,8 +116,13 @@ function toggleRead(tar)
 {
     const card=tar.parentElement;
     const id=card.dataset.id-deleteCount;
-    myLib[id].read=1-myLib[id].read;
-    console.log(myLib[id].read);
+    const book=myLib[id];
+    book.read=1-book.read;
+    console.log(book.read);
+
+    const readStatus=card.lastElementChild;
+    readStatus.textContent=(book.read===1)?'read':'unread';
+    readStatus.classList.value=(book.read==1)?'status':'unstatus';
 }
 
 function checkForCross(event)
@@ -127,7 +132,7 @@ function checkForCross(event)
     {
         removeBook(tar);
     }
-    if(tar.classList.value==='status')
+    if(tar.classList.value==='status'||tar.classList.value==='unstatus')
     {
         toggleRead(tar);
     }
