@@ -109,14 +109,16 @@ function removeBook(tar)
     //remove from display
     books.removeChild(card);
     //remove from array
-    const index=myLib.findIndex((book)=>(book.title==card.querySelectorAll('div')[1].textContent));
+    const bookName=card.querySelectorAll('div')[1].textContent;
+    const index=myLib.findIndex((book)=>(book.title==bookName));
     myLib.splice(index,1);
     
 }
 function toggleRead(tar)
 {
     const card=tar.parentElement;
-    const index=myLib.findIndex((element)=>element.title===card.querySelectorAll('div')[1].textContent);
+    const bookName=card.querySelectorAll('div')[1].textContent;
+    const index=myLib.findIndex((book)=>book.title===bookName);
     const book=myLib[index];
     //toggle in data
     book.read=1-book.read;
@@ -142,7 +144,7 @@ function checkForCross(event)
 }
 
 //main
-let bookCount=0,deleteCount=0;
+let bookCount=0;
 const bodyElement=document.querySelector('body');
 const books=document.querySelector('.books');
 const btn=document.querySelector('.submit');
