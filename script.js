@@ -80,11 +80,7 @@ function constructCard(book)
     return card;
 }
 
-function addToDisplay(book)
-{
-    const card=constructCard(book);
-    books.appendChild(card);
-}
+
 
 function addBook(event)
 {
@@ -99,11 +95,22 @@ function addBook(event)
     const book=addToLib(title, author, pages, read);
     addToDisplay(book);
     event.preventDefault();
+
+    function addToDisplay(book)
+    {
+        const card=constructCard(book);
+        books.appendChild(card);
+    }
 }
 
-function removeBook()
+function removeBook(tar)
 {
-    console.log("remove");
+    const card=tar.parentElement;
+    //remove from display
+    books.removeChild(card);
+    //remove from array
+    myLib.splice(+card.dataset.id - deleteCount,1);
+    deleteCount++;
 }
 
 function checkForCross(event)
@@ -111,13 +118,8 @@ function checkForCross(event)
     tar=event.target;
     if(tar.classList.value==='cross')
     {
-        console.log(event.target.classList.value);
-        const card=tar.parentElement;
-        books.removeChild(card);
-        myLib.splice(+card.dataset.id - deleteCount,1);
-        deleteCount++;
+        removeBook(tar);
     }
-        
 }
 
 //main
