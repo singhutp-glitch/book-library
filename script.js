@@ -38,6 +38,7 @@ function constructCard(book)
     const pagesHead=document.createElement('span');
     const authorname=document.createElement('span');
     const pagesname=document.createElement('span');
+    const cross=document.createElement('div');
 
     //add text
     authorHead.textContent='Author: ';
@@ -47,6 +48,8 @@ function constructCard(book)
     authorname.textContent+=book.author;
     pagesname.textContent+=book.pages;
     bookRead.textContent=(book.read===1)?'read':'unread';
+
+    cross.textContent=' × ';
     
     //connect elements
     bookAuthor.appendChild(authorHead);
@@ -54,12 +57,15 @@ function constructCard(book)
     bookAuthor.appendChild(authorname);
     bookPages.appendChild(pagesname);
 
+    card.appendChild(cross);
     card.appendChild(bookTitle);
     card.appendChild(bookAuthor);
     card.appendChild(bookPages);
     card.appendChild(bookRead);
 
     //add classes
+    cross.classList.add('cross');
+
     authorHead.classList.add('detailhead');
     pagesHead.classList.add('detailhead');
 
@@ -93,6 +99,21 @@ function addBook(event)
     event.preventDefault();
 }
 
+function removeBook()
+{
+    console.log("remove");
+}
+
+function checkForCross(event)
+{
+    tar=event.target;
+    if(tar.classList.value==='cross')
+    {
+        console.log(event.target.classList.value);
+    }
+        
+}
+
 //main
 
 const bodyElement=document.querySelector('body');
@@ -106,4 +127,5 @@ addToLib("1984","George Orwell",328,0);
 displayLib(myLib);
 
 btn.addEventListener('click',addBook);
+books.addEventListener('click',checkForCross);
 
