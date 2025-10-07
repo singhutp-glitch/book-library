@@ -5,7 +5,7 @@ body{
     margin:0;
 }
 .nav{
-    background-color: #1F1F1F;
+    background-color: #1A1C1E;
     color:#F8F8F8;
     padding: 10px 10px;
     font-size: 30px;
@@ -23,22 +23,25 @@ body{
     justify-content: space-around;
     flex-wrap:wrap;
     padding: 5px;
-    background-color: #00c3ff4c;
+    background-color: #121212;
     height: 100vb;   
      overflow-y: auto;  
 }
 .add{
     flex:1 ;
+    font-size: 30px;
+    background-color: #222528;
+    color:#E0E0E0;
 }
 .card{
     width: 300px;
     height: 300px;
     margin:20px;
     box-sizing: border-box;
-    border: groove rgba(141, 249, 255, 0.704) 2px;
+    border: groove rgba(114, 203, 255, 0.588) 2px;
     border-radius: 10px;
-    background-color: #e1f3f3;
-    color:rgb(31, 32, 34);
+    background-color: #1A1C1E;
+    color:#E0E0E0;
 }
 .card>div{
     margin:20px 20px;
@@ -51,6 +54,7 @@ body{
 .detail{
     font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #A0A0A0;
 }
 .detailhead{
     font-weight: bold;
@@ -60,7 +64,7 @@ body{
     display: inline;
     padding: 5px 10px;
     border:solid 1px black;
-    background-color: rgba(0, 255, 13, 0.843);
+    background-color: #0BCFFF25;
     font-size: 20px;
     font-weight: bold;
     color:rgb(0, 0, 0);
@@ -71,7 +75,7 @@ body{
     display: inline;
     padding: 5px 10px;
     border:solid 1px black;
-    background-color: rgba(255, 0, 0, 0.843);
+    background-color:  #0BCFFF;
     font-size: 20px;
     font-weight: bold;
     color:rgb(0, 0, 0);
@@ -89,6 +93,7 @@ div.cross{
 
 form{
     padding-left: 15px;
+    color: #A0A0A0;
 }
 h2{
     text-align: center;
@@ -106,6 +111,10 @@ input[type='text'],input[type='number']{
     font-size: 25px;
     padding-left: 10px;
     border-radius: 8px;
+    border: #2E2E2E solid;
+}
+form input:focus-visible{
+    border: #0BCFFF solid 2px;
 }
 .check{
     display:inline;
@@ -113,15 +122,14 @@ input[type='text'],input[type='number']{
     margin-top: 20px;
 }
 
-.add{
-    font-size: 30px;
-    background-color: aquamarine;
-}
+
 
 button{
     font-size: 24px;
     padding:8px 30px;
     margin-top: 28px;
-    border-radius: 8px;
+    border-radius: 33px;
+    background-color: #0BCFFF;
+    border: #2E2E2E solid;
 }
 
